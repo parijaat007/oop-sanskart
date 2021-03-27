@@ -8,8 +8,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="splashBackground">#CEE9EA</color>
-    <color name="colorPrimary">#FF9800</color>
-    <color name="colorPrimaryDark">#2196F3</color>
+    <color name="colorPrimary">#a6bccb</color>
+    <color name="colorPrimaryDark">#a6bccb</color>
     <color name="colorAccent">#3F51B5</color>
+
+    <color name="plRed">#ce2e18</color>
+    <color name="plPink">#fa638c</color>
+    <color name="plGreen">#6ca414</color>
+    <color name="plLightBrown">#ac8d4e</color>
+    <color name="plGrey">#a6bccb</color>
+    <color name="plDarkBrown">#5b4837</color>
 </resources>
