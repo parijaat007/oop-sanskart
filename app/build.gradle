@@ -21,13 +21,16 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    dataBinding{
+        enabled=true
+    }
 }
-
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
@@ -37,7 +40,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'com.google.firebase:firebase-analytics'
-    implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.google.firebase:firebase-core:18.0.2'
     implementation 'com.github.rey5137:material:1.3.1'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
@@ -50,5 +53,18 @@ dependencies {
 
     // Also declare the dependency for the Google Play services library and specify its version
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
+    //firebase extra dependencies
+    implementation 'com.firebaseui:firebase-ui-auth:4.3.2'
+    implementation "com.google.firebase:firebase-auth:20.0.3"
+
+    // Required only if Facebook login support is required
+    // Find the latest Facebook SDK releases here: https://goo.gl/Ce5L94​
+    implementation 'com.facebook.android:facebook-android-sdk:5.12.1'
+
+    //Circular Image View 3rd party library
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+    //Importing the facebook dependencies for auth
+    implementation 'com.facebook.android:facebook-android-sdk:[5,6)'
+
 }
 apply plugin: 'com.google.gms.google-services'

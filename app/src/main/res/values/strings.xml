@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Sanskart</string>
+    <string name="facebook_application_id">443816620057985</string>
+    <string name="fb_login_protocol_scheme">fb443816620057985</string>
+
     <string name="label_google_sign_in">Firebase + Google Sign In</string>
     <string name="label_facebook_login">Firebase + Facebook Login</string>
     <string name="label_twitter_login">Firebase + Twitter Login</string>
