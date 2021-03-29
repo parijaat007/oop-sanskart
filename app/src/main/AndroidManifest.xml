@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Sanskart">
         <activity android:name=".ProfileActivity"></activity>
         <activity android:name=".LoginHelperActivity" />
+        <activity android:name=".DashboardActivity"></activity>
+        <activity android:name=".OTPVerifyActivity" />
+        <activity android:name=".OTPSendActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity">
@@ -43,6 +46,10 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

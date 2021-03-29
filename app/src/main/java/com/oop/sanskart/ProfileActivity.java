@@ -13,13 +13,14 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ProfileActivity extends AppCompatActivity {
-
     TextView Name,Mail;
     Button Logout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
         Logout = findViewById(R.id.btLogOut);
         Name = findViewById(R.id.Name);
         Mail = findViewById(R.id.Mail);
