@@ -15,6 +15,14 @@
         android:layout_centerVertical="true"
         tools:text="Logout" />
 
+    <Button
+        android:id="@+id/btADMIN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="RETAILER ZONE"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"/>
+
     <TextView
         android:id="@+id/Name"
         android:layout_width="246dp"
