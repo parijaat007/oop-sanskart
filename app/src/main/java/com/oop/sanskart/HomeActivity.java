@@ -103,8 +103,8 @@ public class HomeActivity extends AppCompatActivity implements DrawerAdapter.OnI
             finish();
         }
         slidingRootNav.closeMenu();
-        transaction.addToBackStack(null);
-        transaction.commit();
+        Fragment selectedScreen = CenteredTextFragment.createFor(screenTitles[position]);
+        showFragment(selectedScreen);
     }
 
     private void showFragment(Fragment fragment) {
