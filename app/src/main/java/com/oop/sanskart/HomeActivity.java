@@ -172,7 +172,7 @@ public class HomeActivity extends AppCompatActivity
                                 cart_count=0;
                                 invalidateOptionsMenu();
                                 editor.clear().apply();
-                                Intent i = new Intent(HomeActivity.this, StartActivity.class);
+                                Intent i = new Intent(HomeActivity.this, LoginActivity.class);
                                 startActivity(i);
                                 finish();
 
