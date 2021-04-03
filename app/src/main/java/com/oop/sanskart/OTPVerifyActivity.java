@@ -56,7 +56,7 @@ public class OTPVerifyActivity extends AppCompatActivity {
 
                                     if(task.isSuccessful())
                                     {
-                                        Intent intent = new Intent(OTPVerifyActivity.this, DashboardActivity.class);
+                                        Intent intent = new Intent(OTPVerifyActivity.this, HomeActivity.class);
                                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(intent);
                                     }

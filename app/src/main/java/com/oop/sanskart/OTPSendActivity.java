@@ -46,7 +46,7 @@ public class OTPSendActivity extends AppCompatActivity {
             @Override
             public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
                 Toast.makeText(OTPSendActivity.this, "Verification Complete", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(OTPSendActivity.this, ProfileActivity.class);
+                Intent intent = new Intent(OTPSendActivity.this, HomeActivity.class);
                 startActivity(intent);
             }
 
