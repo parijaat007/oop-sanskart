@@ -22,8 +22,7 @@
         <activity android:name=".NewAccountActivity" />
         <activity
             android:name=".HomeActivity"
-            android:label="@string/title_activity_home"
-            android:theme="@style/Theme.Sanskart.NoActionBar" />
+            android:label="@string/title_activity_home" />
         <activity android:name=".OTPVerifyActivity" />
         <activity android:name=".OTPSendActivity" />
         <activity android:name=".LoginActivity" />

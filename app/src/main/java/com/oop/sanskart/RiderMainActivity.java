@@ -1,6 +1,8 @@
 package com.oop.sanskart;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.Debug;
@@ -11,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -29,7 +32,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class RiderMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class RiderMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
@@ -64,11 +67,9 @@ public class RiderMainActivity extends AppCompatActivity implements NavigationVi
         firebaseAuth = FirebaseAuth.getInstance();
         orderref = FirebaseDatabase.getInstance().getReference("Orders");
         setUpRecyclerView();
-        setSupportActionBar(toolbar);
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(
                 this,
                 drawerLayout,
-                toolbar,
                 R.string.openNavDrawer,
                 R.string.closeNavDrawer
         );
@@ -87,13 +88,23 @@ public class RiderMainActivity extends AppCompatActivity implements NavigationVi
     }
 
     private void getLastKnownLocation() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
         fusedLocationClient.getLastLocation().addOnCompleteListener((new OnCompleteListener<Location>() {
             @Override
             public void onComplete(@NonNull Task<Location> task) {
                 if (task.isSuccessful()) {
                     Location location = task.getResult();
                     pos = new LatLng(location.getLatitude(), location.getLongitude());
-                    Log.d("Latitude =",Double.toString(pos.latitude));
+                    Log.d("Latitude =", Double.toString(pos.latitude));
                 }
             }
         }));
